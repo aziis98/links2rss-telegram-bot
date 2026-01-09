@@ -68,4 +68,4 @@ Since this project uses `uv`, setup is near-instant:
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the AGPLv3 License.
