@@ -445,7 +445,7 @@ async def main() -> None:
             run_fastapi_server(),
             run_telegram_bot(),
         )
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, asyncio.CancelledError):
         print("\nShutting down...")
     finally:
         if db_conn:
