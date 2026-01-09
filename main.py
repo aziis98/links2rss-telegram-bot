@@ -40,7 +40,7 @@ class LinkData:
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 HTTP_PORT = int(os.getenv("HTTP_PORT", "8080"))
 APP_URL = os.getenv("APP_URL", f"http://localhost:{HTTP_PORT}")
-DB_PATH = os.getenv("DB_PATH", "links.db")
+DB_PATH = os.getenv("DB_PATH", "links.local.db")
 
 # Store links in memory (use database for production)
 links = []
@@ -308,7 +308,7 @@ async def handle_rssfeed_command(update: Update, context: ContextTypes.DEFAULT_T
     # Build RSS feed URL
     rss_url = f"{APP_URL}/rss?token={token}"
 
-    message = f"Your RSS feed link:\n\n`{rss_url}`"
+    message = f"Your RSS feed link, use it in your RSS reader:\n{rss_url}"
     await update.message.reply_text(message, parse_mode="Markdown")
 
 
